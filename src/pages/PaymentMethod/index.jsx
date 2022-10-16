@@ -10,10 +10,11 @@ import { FormInput } from "../../components/FormInput";
 import { SelectInput } from "../../components/SelectInput";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import chip from "../../assets/chip.png"
 import { Loader } from "../../components/Loader";
+import { api } from "../../config";
 // import { StatusOrderBar } from "../../components/StatusOrderBar";
 
 export function PaymentMethod(){
@@ -45,7 +46,7 @@ export function PaymentMethod(){
     const handleSendPaymentInfo = (e) => {
         e.preventDefault();
 
-        axios.put('/api/v2/me/update/paymentinfo', {
+        api.put('/api/v2/me/update/paymentinfo', {
             creditCard: {
                 name: name,
                 number: number,

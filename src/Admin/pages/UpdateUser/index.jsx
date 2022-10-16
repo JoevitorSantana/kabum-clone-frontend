@@ -7,16 +7,16 @@ import { useState } from 'react';
 import { FormInput } from '../../../components/FormInput';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearErrors, getProductDetails } from '../../../actions/ProductActions';
+import { clearErrors } from '../../../actions/ProductActions';
 import { toast, ToastContainer } from 'react-toastify';
 import { UPDATE_USER_RESET } from '../../../constants/userConstants';
-import loader from '../../../assets/loading.gif'
+// import loader from '../../../assets/loading.gif'
 import { getUserDetails, updateUser } from '../../../actions/userActions';
 
 const style = {
     position: 'absolute',
     top: '50%',
-    left: '50%',      
+    left: '50%',
     maxHeight: 500,
     display:'block',
     transform: 'translate(-50%, -50%)',
@@ -35,6 +35,7 @@ export function UpdateUser({history, match, params}){
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    // eslint-disable-next-line
     const { loading, error, user } = useSelector((state) => state.userDetails);
 
     const [name, setName] = useState("");
@@ -43,7 +44,6 @@ export function UpdateUser({history, match, params}){
     
 
     const {
-        loading: updateLoading,
         error: updateError,
         isUpdated,
       } = useSelector((state) => state.profile);

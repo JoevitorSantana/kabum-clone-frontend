@@ -7,9 +7,10 @@ import {MdShoppingBasket} from 'react-icons/md'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {HiDocumentSearch} from 'react-icons/hi'
-import axios from "axios";
+// import axios from "axios";
 import { useRef, useState } from "react";
 import { Loader } from "../../components/Loader";
+import { api } from "../../config";
 
 export function OrderDetails({history}){
     // eslint-disable-next-line
@@ -31,7 +32,7 @@ export function OrderDetails({history}){
         const myForm = new FormData();        
 
         myForm.set('cep', cep);
-        axios.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
+        api.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
     }    
 
     const cepForm = useRef(null);  

@@ -9,9 +9,10 @@ import {Loader} from '../../components/Loader'
 import { useEffect, useState } from "react";
 import { clearErrors, loadUser, updateProfile } from "../../actions/userActions";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
-import axios from "axios";
+// import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { saveShippingInfo } from "../../actions/CartActions";
+import { api } from "../../config";
 
 export function UserDetails(){
 
@@ -50,7 +51,7 @@ export function UserDetails(){
         
         e.preventDefault();
 
-        axios.put('/api/v2/me/update/shippinginfo', {
+        api.put('/api/v2/me/update/shippinginfo', {
             shippingInfo: {
                 street: street,
                 number: number,

@@ -60,6 +60,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://52.90.4.236:4000"
+  }
 }

@@ -9,11 +9,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {addItemsToCart, removeAllItemsFromCart, removeItemsFromCart, saveDeliveryPrice} from '../../actions/CartActions';
 import {HiDocumentSearch} from 'react-icons/hi'
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "../../components/Loader";
 // import { StatusOrderBar } from "../../components/StatusOrderBar";
 import MetaData from "../../utils/Metadata";
+import { api } from "../../config";
 
 export function Cart({history}){
 
@@ -46,7 +47,7 @@ export function Cart({history}){
         const myForm = new FormData();        
 
         myForm.set('cep', cep);
-        axios.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
+        api.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
     }    
 
     const cepForm = useRef(null);  
@@ -101,7 +102,7 @@ export function Cart({history}){
         setFinalDeliveryPrice(0);
         
         if(user?.shippingInfo){
-            axios.post(`/api/v2/entrega`, {
+            api.post(`/api/v2/entrega`, {
                 cep: user.shippingInfo?.cep,
                 nVlPeso: Weight,                
                 nVlComprimento: Length,

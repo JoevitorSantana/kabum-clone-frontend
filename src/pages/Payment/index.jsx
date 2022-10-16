@@ -1,5 +1,5 @@
 import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import axios from "axios";
+// import axios from "axios";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
@@ -9,6 +9,7 @@ import { clearErrors } from "../../actions/userActions";
 import styled from "styled-components";
 import { BsCartCheckFill } from "react-icons/bs";
 import { removeAllItemsFromCart } from "../../actions/CartActions";
+import { api } from "../../config";
 
 export function Payment({history}){
 
@@ -47,7 +48,7 @@ export function Payment({history}){
                 },
             };
 
-            const {data} = await axios.post(
+            const {data} = await api.post(
                 "/api/v2/payment/process",
                 paymentData,
                 config

@@ -13,9 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { BannerPromotional, CarouselImages, Container, Content, DeliveryCalc, DeliveryPricing, DeliveryService, DeliveryServiceForm, DeliveryTitle, Divider, DownPromotion, EndPromotion, EndPromotional, FreteOptions, InputSection, Price, ProductImage, ProductImageSection, ProductInfoSection, ProductRatingSection, ProductSection, RatingSection, SenderInfo, SmallImage, Title } from "./styles";
 import { FaBoxes, FaShoppingCart, FaTruck } from "react-icons/fa";
 import { addItemsToCart } from '../../actions/CartActions';
-import axios from "axios";
+// import axios from "axios";
 import styled from "styled-components";
 import MetaData from '../../utils/Metadata';
+import { api } from "../../config";
 
 
 export function ProductDetails({match}){
@@ -39,7 +40,7 @@ export function ProductDetails({match}){
         myForm.set('nVlLargura', product.nVlLargura);
         myForm.set('nVlComprimento', product.nVlComprimento);
         myForm.set('nVlPeso', product.nVlPeso);
-        axios.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
+        api.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
     }    
 
     const cepForm = useRef(null);     
