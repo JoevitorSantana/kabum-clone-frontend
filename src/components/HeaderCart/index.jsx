@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import KabumLogo from '../../assets/kabum-logo-2.png';
 import KabumSmall from '../../assets/kabum.png';
-import { FaSearch} from 'react-icons/fa';
-import {MdReorder} from 'react-icons/md';
+// import { FaSearch} from 'react-icons/fa';
+// import {MdReorder} from 'react-icons/md';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { logout } from '../../actions/userActions';
+// import { useDispatch } from 'react-redux';
+// import { logout } from '../../actions/userActions';
 import DrawerComponent from '../Drawer';
 import { useState } from 'react';
 
@@ -54,7 +54,7 @@ export function HeaderCart({history, location}) {
   )
 };
 
-const DrawerIcon = styled.div`
+/*const DrawerIcon = styled.div`
     display: flex;
     align-items: center;    
 
@@ -126,7 +126,7 @@ const MenuContent = styled.div`
     align-items: center;
     justify-content: center;
     background-color: var(--orange-text);
-`;
+`;*/
 
 const Container = styled.header`    
     display: flex;
@@ -182,7 +182,7 @@ const Logo = styled.div`
     }
 `;
 
-const SearchInput = styled.div`
+/*const SearchInput = styled.div`
     display: flex;
     width: 100%;    
     flex-direction: column;
@@ -294,7 +294,7 @@ const SearchInput = styled.div`
             }            
         }
     }
-`;
+`;*/
 
 
 const Login = styled.div`
@@ -361,7 +361,7 @@ const Login = styled.div`
     }
 `;
 
-const Options = styled.div`
+/* const Options = styled.div`
     display: flex;
     gap: 1.5rem;    
 
@@ -383,4 +383,4 @@ const Options = styled.div`
             display: none;            
         }        
     }
-`;
+`;*/

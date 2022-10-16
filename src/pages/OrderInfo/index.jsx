@@ -1,10 +1,10 @@
 import { FaTruck } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { HeaderCart } from "../../components/HeaderCart";
 import {MdShoppingBasket} from 'react-icons/md'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {HiDocumentSearch} from 'react-icons/hi'
 import axios from "axios";
@@ -12,16 +12,17 @@ import { useRef, useState } from "react";
 import { Loader } from "../../components/Loader";
 
 export function OrderDetails({history}){
-
-    const dispatch = useDispatch();
-
+    // eslint-disable-next-line
     const {cartItems, shippingInfo, deliveryPrice} = useSelector((state) => state.cart);
     const {user, loading} = useSelector((state) => state.user)    
 
+    // eslint-disable-next-line
     const [deliveryPrices, setDeliveryPrices] = useState([]);    
 
+    // eslint-disable-next-line
     const [cep, setCep] = useState([]);
 
+    // eslint-disable-next-line
     const [finalDeliveryPrice, setFinalDeliveryPrice] = useState(0);
         
 
@@ -48,9 +49,9 @@ export function OrderDetails({history}){
     let discountPrice = totalPrice - (Price * (15/100));
     
 
-    let statusPercent = 20;
+    // let statusPercent = 20;
 
-    const doughnutData = {
+    /* const doughnutData = {
         datasets: [
             {
                 backgroundColor: ['rgb(255, 101, 0)', 'lightgray'],
@@ -72,7 +73,7 @@ export function OrderDetails({history}){
                     enabled: false
                 }
             },            
-    }    
+    } */   
 
     const proceedToPayment = () => {
         const data = {
@@ -330,10 +331,10 @@ const UserInfoDetails = styled.div`
     }
 `;
 
-const Stars = styled.div`
+/*const Stars = styled.div`
     display: flex;
     width: 100px;
-`;
+`;*/
 
 
 const DeliveryService = styled.div`
@@ -622,7 +623,7 @@ const ProductPriceSection = styled.div`
 `;
 
 
-const RemoveProductButton = styled.button`
+/* const RemoveProductButton = styled.button`
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -633,7 +634,7 @@ const RemoveProductButton = styled.button`
     font-weight: 700;
     margin: 5px auto;
     cursor: pointer;
-`;
+`;*/
 
 const Quantity = styled.div`
     display: flex;
@@ -739,7 +740,7 @@ const InfoSection = styled.div`
     flex-direction: row;
 `;
 
-const Button = styled.button`    
+/* const Button = styled.button`    
 
     background: transparent;
     margin-right: 0; 
@@ -811,7 +812,7 @@ const AddressInfoCard = styled.div`
         color: rgb(127, 133, 141);
         padding-left: 20px;
     }
-`;
+`;*/
 
 const AddressCardTitle = styled.div`
     display: flex;
@@ -849,7 +850,7 @@ const AddressCard = styled.div`
     
 `;
 
-const IconArea = styled.div`
+/* const IconArea = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 10px;    
@@ -914,7 +915,7 @@ const EmptyCart = styled.div`
         line-height: 1.5rem;
         text-align: center;
     }
-`;
+`;*/
 
 const Content = styled.div`
     display: flex;

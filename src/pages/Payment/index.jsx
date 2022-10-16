@@ -1,6 +1,6 @@
 import { CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import { HeaderCart } from "../../components/HeaderCart";
@@ -8,7 +8,7 @@ import {createOrder} from '../../actions/OrderActions';
 import { clearErrors } from "../../actions/userActions";
 import styled from "styled-components";
 import { BsCartCheckFill } from "react-icons/bs";
-import { removeAllItemsFromCart, removeItemsFromCart } from "../../actions/CartActions";
+import { removeAllItemsFromCart } from "../../actions/CartActions";
 
 export function Payment({history}){
 
@@ -19,9 +19,9 @@ export function Payment({history}){
     const elements = useElements();
     const payBtn = useRef(null);
 
-    const { shippingInfo, cartItems } = useSelector((state) => state.cart);
+    const { cartItems } = useSelector((state) => state.cart);
     const {user} = useSelector((state) => state.user);
-    const {error, loading} = useSelector((state) => state.order);
+    const {error} = useSelector((state) => state.order);
 
     const paymentData = {
         amount: Math.round(orderInfo.discountPrice)

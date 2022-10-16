@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
-import { clearErrors, createProduct } from "../../../actions/ProductActions";
-import { NEW_PRODUCT_RESET } from "../../../constants/ProductConstants";
+import { clearErrors /* createProduct */ } from "../../../actions/ProductActions";
+// import { NEW_PRODUCT_RESET } from "../../../constants/ProductConstants";
 import { AdminHeader } from "../../components/Header";
 import styled from 'styled-components';
 import { FormInput } from "../../../components/FormInput";
@@ -19,7 +19,7 @@ export function CreateUser({history, match, params}){
     const { loading, error, user } = useSelector((state) => state.userDetails);
 
     const {
-        loading: updateLoading,
+        // loading: updateLoading,
         error: updateError,
         isUpdated,
     } = useSelector((state) => state.profile);
@@ -55,7 +55,7 @@ export function CreateUser({history, match, params}){
             }, 5000); 
             dispatch({ type: UPDATE_USER_RESET });
         }
-    }, [dispatch, alert, error, history, isUpdated, updateError, user, userId]);
+    }, [dispatch, error, history, isUpdated, updateError, user, userId]);
 
     const updateUserSubmitHandler = (e) => {
         e.preventDefault();
@@ -124,7 +124,7 @@ export function CreateUser({history, match, params}){
     );
 }
 
-const ButtonSubmit = styled.button`
+/* const ButtonSubmit = styled.button`
     background: #FF6500;
     color: #fff;
     height: 50px;
@@ -141,7 +141,7 @@ const Sizes = styled.div`
         flex-wrap: wrap;
         max-width: 100%;
     }
-`;
+`; */
 
 const Button = styled.button`
     display: flex;

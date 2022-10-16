@@ -1,7 +1,7 @@
 import { AdminHeader } from "../../components/Header";
 import styled from 'styled-components'
 import { DrawerNavigator } from "../../components/DrawerNavigator";
-import { Table } from "../../components/Table";
+// import { Table } from "../../components/Table";
 import { ToastContainer } from "react-toastify";
 import { Loader } from "../../../components/Loader";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import { OrdersTable } from "../../components/OrderTable";
 
 export function Orders(){
 
-    const {loading, products} = useSelector((state) => state.products)
+    const {loading} = useSelector((state) => state.products)
 
     return(
         <>

@@ -7,7 +7,7 @@ import { InputPassword } from "../../components/InputPassword";
 import {ImLocation} from 'react-icons/im'
 import {Loader} from '../../components/Loader'
 import { useEffect, useState } from "react";
-import { clearErrors, loadUser, updateProfile, updateShippingInfo } from "../../actions/userActions";
+import { clearErrors, loadUser, updateProfile } from "../../actions/userActions";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -32,7 +32,7 @@ export function UserDetails(){
     const [state, setState] = useState('');   
     const [country, setCountry] = useState('Brasil');
     const [avatar, setAvatar] = useState();
-    const [avatarPreview, setAvatarPreview] = useState('');
+    const [avatarPreview, setAvatarPreview] = useState('/profile.png');
 
     const updateProfileSubmit = (e) => {
         e.preventDefault();
@@ -43,7 +43,7 @@ export function UserDetails(){
         myForm.set("email", email);
         myForm.set("avatar", avatar);
         dispatch(updateProfile(myForm));
-        
+
     }
 
     const updateShippingInfoSubmit = (e) => {  
@@ -91,6 +91,9 @@ export function UserDetails(){
         if(user){
             setName(user.name);
             setEmail(user.email);
+        }
+
+        if(user.avatar){
             setAvatarPreview(user.avatar.url);
         }
 

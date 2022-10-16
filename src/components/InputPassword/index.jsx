@@ -14,10 +14,10 @@ export function InputPassword(props) {
         showPassword: false,
       });
     
-      const handleChange =
+      /*const handleChange =
         (prop) => (event) => {
           setValues({ ...values, [prop]: event.target.value });
-        };
+        };*/
     
       const handleClickShowPassword = () => {
         setValues({

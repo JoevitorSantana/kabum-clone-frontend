@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 export function ProductsList(){
 
-    const {loading, products} = useSelector((state) => state.products)
+    const {loading} = useSelector((state) => state.products)
 
     return(
         <>

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import {clearErrors, deleteProduct, getAdminProduct} from '../../../actions/ProductActions'
 import {BsTrashFill} from 'react-icons/bs'
 import {AiFillEdit} from 'react-icons/ai'
-import { EditProduct } from '../../pages/EditProduct';
+// import { EditProduct } from '../../pages/EditProduct';
 import { toast, ToastContainer } from 'react-toastify';
 import { DELETE_PRODUCT_RESET } from '../../../constants/ProductConstants';
 import { Loader } from '../../../components/Loader';

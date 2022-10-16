@@ -12,7 +12,7 @@ import {HiDocumentSearch} from 'react-icons/hi'
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "../../components/Loader";
-import { StatusOrderBar } from "../../components/StatusOrderBar";
+// import { StatusOrderBar } from "../../components/StatusOrderBar";
 import MetaData from "../../utils/Metadata";
 
 export function Cart({history}){
@@ -24,6 +24,7 @@ export function Cart({history}){
 
     const [deliveryPrices, setDeliveryPrices] = useState([]);    
 
+    // eslint-disable-next-line
     const [cep, setCep] = useState([]);
 
     const [finalDeliveryPrice, setFinalDeliveryPrice] = useState(0);

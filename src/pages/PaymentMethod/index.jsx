@@ -14,7 +14,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import chip from "../../assets/chip.png"
 import { Loader } from "../../components/Loader";
-import { StatusOrderBar } from "../../components/StatusOrderBar";
+// import { StatusOrderBar } from "../../components/StatusOrderBar";
 
 export function PaymentMethod(){
 

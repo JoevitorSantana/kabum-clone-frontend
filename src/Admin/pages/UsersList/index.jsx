@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Loader } from "../../../components/Loader";
 import { DrawerNavigator } from "../../components/DrawerNavigator";
-import { Table } from "../../components/Table";
+// import { Table } from "../../components/Table";
 import { ToastContainer } from "react-toastify";
 import { UserTable } from "../../components/UserTable";
 

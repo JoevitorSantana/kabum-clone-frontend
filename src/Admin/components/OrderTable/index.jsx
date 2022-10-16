@@ -7,14 +7,14 @@ import { useEffect } from 'react';
 import {clearErrors } from '../../../actions/ProductActions'
 import {BsTrashFill} from 'react-icons/bs'
 import {AiFillEdit} from 'react-icons/ai'
-import { EditProduct } from '../../pages/EditProduct';
+// import { EditProduct } from '../../pages/EditProduct';
 import { toast, ToastContainer } from 'react-toastify';
-import { DELETE_PRODUCT_RESET } from '../../../constants/ProductConstants';
-import { DELETE_USER_RESET } from '../../../constants/userConstants';
-import { UpdateUser } from '../../pages/UpdateUser';
+// import { DELETE_PRODUCT_RESET } from '../../../constants/ProductConstants';
+// import { DELETE_USER_RESET } from '../../../constants/userConstants';
+// import { UpdateUser } from '../../pages/UpdateUser';
 import { deleteOrder, getAllOrders } from '../../../actions/OrderActions';
 import { DELETE_ORDER_RESET } from '../../../constants/orderConstants';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -27,7 +27,6 @@ export function OrdersTable({history}){
     const {
         error: deleteError,
         isDeleted,
-        message,
       } = useSelector((state) => state.profile);
 
     const deleteOrderHandler = (id) => {
@@ -92,11 +91,6 @@ export function OrdersTable({history}){
         },
         
     ];
-
-    {/*const getUserName = (userId) => {
-        const userName = axios.get(`/api/v2/admin/users/${userId}`).then((response) => response.data.user).catch((error) => console.log(error))
-        return userName;
-    }*/} 
 
     const rows = [];
 

@@ -25,10 +25,10 @@ import { ProductsList } from "./Admin/pages/Products";
 import { UserList } from "./Admin/pages/UsersList";
 import { CreateUser } from "./Admin/pages/CreateUser";
 import { UpdateProduct } from "./Admin/pages/UpdateProduct";
-import { OrdersTable } from "./Admin/components/OrderTable";
+// import { OrdersTable } from "./Admin/components/OrderTable";
 import { Orders } from "./Admin/pages/Orders";
 
-const stripePromise = loadStripe('pk_test_51LLUArIsEqwuAs3z70CJx0Lg6fVZXnSDcf8dbHB73W1ykbJ9dGjlJNJVvDhEkDeBaknMrfM7E98xaP3c1ucl0ZBG00jNTYhLZm');
+// const stripePromise = loadStripe('pk_test_51LLUArIsEqwuAs3z70CJx0Lg6fVZXnSDcf8dbHB73W1ykbJ9dGjlJNJVvDhEkDeBaknMrfM7E98xaP3c1ucl0ZBG00jNTYhLZm');
 
 
 function App() {  
@@ -73,7 +73,7 @@ function App() {
           <ProtectedRoute isAdmin={true} exact path="/admin/edit/user/:id" component={CreateUser} />
           <ProtectedRoute isAdmin={true} exact path="/admin/users" component={UserList} />     
           <ProtectedRoute isAdmin={true} exact path="/admin/orders" component={Orders} />     
-     
+
         </Switch>
       </Router>
                 

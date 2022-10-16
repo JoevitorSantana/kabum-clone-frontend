@@ -7,12 +7,12 @@ import { useEffect } from 'react';
 import {clearErrors } from '../../../actions/ProductActions'
 import {BsTrashFill} from 'react-icons/bs'
 import {AiFillEdit} from 'react-icons/ai'
-import { EditProduct } from '../../pages/EditProduct';
+// import { EditProduct } from '../../pages/EditProduct';
 import { toast, ToastContainer } from 'react-toastify';
-import { DELETE_PRODUCT_RESET } from '../../../constants/ProductConstants';
+// import { DELETE_PRODUCT_RESET } from '../../../constants/ProductConstants';
 import { DELETE_USER_RESET } from '../../../constants/userConstants';
 import { deleteUser, getAllUsers } from '../../../actions/userActions';
-import { UpdateUser } from '../../pages/UpdateUser';
+// import { UpdateUser } from '../../pages/UpdateUser';
 
 
 
@@ -29,7 +29,7 @@ export function UserTable({history}){
     const {
         error: deleteError,
         isDeleted,
-        message,
+        // message,
       } = useSelector((state) => state.profile);
 
     const columns = [

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Header } from "../../components/Header";
 import Avatar from "@material-ui/core/Avatar";
@@ -10,12 +10,10 @@ import { Loader } from "../../components/Loader";
 // import { FaShoppingCart } from "react-icons/fa";
 import {MdOutlineAdminPanelSettings} from 'react-icons/md';
 import { AiFillCamera } from "react-icons/ai";
-import { useState } from "react";
-import { updateProfile } from "../../actions/userActions";
+// import { useState } from "react";
+// import { updateProfile } from "../../actions/userActions";
 
 export function Profile({history}){
-
-    const dispatch = useDispatch();
 
     const {user, isAuthenticated, loading} = useSelector((state) => state.user);
 
