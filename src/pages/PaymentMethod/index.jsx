@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import chip from "../../assets/chip.png"
 import { Loader } from "../../components/Loader";
-import { api } from "../../config";
+import axios from "axios";
 // import { StatusOrderBar } from "../../components/StatusOrderBar";
 
 export function PaymentMethod(){
@@ -46,7 +46,7 @@ export function PaymentMethod(){
     const handleSendPaymentInfo = (e) => {
         e.preventDefault();
 
-        api.put('/api/v2/me/update/paymentinfo', {
+        axios.put('/api/v2/me/update/paymentinfo', {
             creditCard: {
                 name: name,
                 number: number,

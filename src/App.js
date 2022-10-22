@@ -15,7 +15,7 @@ import { OrderDetails } from "./pages/OrderInfo";
 import {loadStripe} from '@stripe/stripe-js'
 import {Elements} from '@stripe/react-stripe-js'
 import { Payment } from "./pages/Payment";
-// import axios from "axios";
+import axios from 'axios';
 import { Success } from "./pages/Success";
 import { MyOrders } from "./pages/MyOrders";
 import { Dashboards } from "./Admin/pages/Dashboard";
@@ -27,17 +27,15 @@ import { CreateUser } from "./Admin/pages/CreateUser";
 import { UpdateProduct } from "./Admin/pages/UpdateProduct";
 // import { OrdersTable } from "./Admin/components/OrderTable";
 import { Orders } from "./Admin/pages/Orders";
-import { api } from "./config";
 
 // const stripePromise = loadStripe('pk_test_51LLUArIsEqwuAs3z70CJx0Lg6fVZXnSDcf8dbHB73W1ykbJ9dGjlJNJVvDhEkDeBaknMrfM7E98xaP3c1ucl0ZBG00jNTYhLZm');
-
 
 function App() {  
 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey(){
-    const {data} = await api.get('/api/v2/stripeapikey');
+    const {data} = await axios.get('/api/v2/stripeapikey');
 
     setStripeApiKey(data.stripeApiKey);
   }

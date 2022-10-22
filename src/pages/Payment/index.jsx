@@ -9,7 +9,7 @@ import { clearErrors } from "../../actions/userActions";
 import styled from "styled-components";
 import { BsCartCheckFill } from "react-icons/bs";
 import { removeAllItemsFromCart } from "../../actions/CartActions";
-import { api } from "../../config";
+import axios from "axios";
 
 export function Payment({history}){
 
@@ -48,7 +48,7 @@ export function Payment({history}){
                 },
             };
 
-            const {data} = await api.post(
+            const {data} = await axios.post(
                 "/api/v2/payment/process",
                 paymentData,
                 config

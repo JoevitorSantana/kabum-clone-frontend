@@ -9,10 +9,9 @@ import {Loader} from '../../components/Loader'
 import { useEffect, useState } from "react";
 import { clearErrors, loadUser, updateProfile } from "../../actions/userActions";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
-// import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { saveShippingInfo } from "../../actions/CartActions";
-import { api } from "../../config";
+import axios from "axios";
 
 export function UserDetails(){
 
@@ -51,7 +50,7 @@ export function UserDetails(){
         
         e.preventDefault();
 
-        api.put('/api/v2/me/update/shippinginfo', {
+        axios.put('/api/v2/me/update/shippinginfo', {
             shippingInfo: {
                 street: street,
                 number: number,
@@ -60,7 +59,7 @@ export function UserDetails(){
                 state: state,
                 country: country
             }
-        }).then((response) => console.log(response.data)).catch((error) => console.log('deu merda'));
+        });
 
         dispatch(saveShippingInfo({street, number, cep, city, state, country}));
         toast.success("Endereço cadastrado com sucesso!")
@@ -70,9 +69,11 @@ export function UserDetails(){
         const cep = e.target.value.replace(/\D/g, '');
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(res => res.json()).then(data => {
-            console.log(data)
             setCity(data.localidade);
-            setState(data.uf);            
+            setState(data.uf);
+            if (data.logradouro) {
+                setStreet(data.logradouro);
+            }
         })
     }
 

@@ -10,7 +10,7 @@ import {HiDocumentSearch} from 'react-icons/hi'
 // import axios from "axios";
 import { useRef, useState } from "react";
 import { Loader } from "../../components/Loader";
-import { api } from "../../config";
+import axios from "axios";
 
 export function OrderDetails({history}){
     // eslint-disable-next-line
@@ -32,7 +32,7 @@ export function OrderDetails({history}){
         const myForm = new FormData();        
 
         myForm.set('cep', cep);
-        api.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
+        axios.post('/api/v2/entrega', myForm).then((response) => setDeliveryPrices(response.data)).catch((error) => console.log(error))
     }    
 
     const cepForm = useRef(null);  
